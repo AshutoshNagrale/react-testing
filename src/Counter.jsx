@@ -26,6 +26,14 @@ const Counter = ({ initialCount }) => {
         <button onClick={restart}> Restart</button>
         <button onClick={switchSigns}> Switch Signs</button>
       </div>
+
+      <div>
+        <ul>
+          <li>Apple</li>
+          <li>Mango</li>
+          <li>Banana</li>
+        </ul>
+      </div>
     </div>
   );
 };

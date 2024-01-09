@@ -39,4 +39,10 @@ describe(Counter, () => {
     const countValue = Number(getByTestId("count").textContent);
     expect(countValue).toEqual(-90);
   });
+
+  it("test to check length of list items", () => {
+    const { getByTestId, getAllByRole } = render(<Counter initialCount={0} />);
+    const listItems = getAllByRole("listitem");
+    expect(listItems).toHaveLength(3);
+  });
 });
