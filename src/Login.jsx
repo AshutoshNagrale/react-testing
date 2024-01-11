@@ -2,9 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const Login = () => {
-  // eslint-disable-next-line
   const [error, setError] = useState(false);
-  // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +41,7 @@ const Login = () => {
         />
 
         <button disabled={!username || !password} onClick={handleSubmit}>
-          {loading ? "loading..." : "Login"}
+          {loading ? "Loading" : "Login"}
         </button>
         <span
           data-testid="error"

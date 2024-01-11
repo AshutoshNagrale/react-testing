@@ -1,6 +1,5 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import Login from "./Login";
-import { __esModule } from "@testing-library/jest-dom/dist/matchers";
 
 describe(Login, () => {
   __esModule: true,
@@ -94,36 +93,28 @@ describe(Login, () => {
   it("loading text in login button should be rendered when input exit and button clicked", () => {
     const { getByRole, getByPlaceholderText } = render(<Login />);
     const loginButton = getByRole("button");
-
     const userInput = getByPlaceholderText(/Username/i);
     const passwordInput = getByPlaceholderText(/Password/i);
-
     const testValue = "ashutosh";
     const testPass = "ashu@1234";
 
     fireEvent.change(userInput, { target: { value: testValue } });
     fireEvent.change(passwordInput, { target: { value: testPass } });
-
     fireEvent.click(loginButton);
-
     expect(loginButton).toHaveTextContent(/Loading/i);
   });
 
   it("loading text should not be rendered after data fetching", async () => {
     const { getByRole, getByPlaceholderText } = render(<Login />);
     const loginButton = getByRole("button");
-
     const userInput = getByPlaceholderText(/Username/i);
     const passwordInput = getByPlaceholderText(/Password/i);
 
     const testValue = "ashutosh";
     const testPass = "ashu@1234";
-
     fireEvent.change(userInput, { target: { value: testValue } });
     fireEvent.change(passwordInput, { target: { value: testPass } });
-
     fireEvent.click(loginButton);
-
     await waitFor(() => expect(loginButton).not.toHaveTextContent(/Loading/i));
   });
 });
