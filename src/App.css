@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  list-style: none;
+  font-size: large;
+  font-weight: 600;
+}
+
+.loginContainer > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form > input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 20rem;
+  margin: 0.2rem;
+}
+form > button {
+  margin: 0.2rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 21.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
